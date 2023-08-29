@@ -1,0 +1,21 @@
+:root {
+  --foreground-rgb: #f1f1f1;
+  --gap: 8px;
+}
+
+body {
+  height: 100%;
+  color: var(--foreground-rgb);
+  margin: 0;
+  padding: 0;
+  outline: none;
+
+  scroll-behavior: smooth;
+
+  main {
+    height: 100vh;
+    position: relative;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+  }
+}
