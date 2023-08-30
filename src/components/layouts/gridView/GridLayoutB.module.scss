@@ -1,0 +1,49 @@
+.gridContainer {
+  & > :nth-child(1) {
+    grid-area: 6/10/18/16;
+  }
+  & > :nth-child(2) {
+    grid-area: 3/16/15/22;
+  }
+  & > :nth-child(3) {
+    grid-area: 18/12/30/18;
+  }
+  & > :nth-child(4) {
+    grid-area: 15/18/27/24;
+  }
+  & > :nth-child(5) {
+    grid-area: 9/6/18/10;
+  }
+  & > :nth-child(6) {
+    grid-area: 15/24/21/29;
+  }
+  & > :nth-child(7) {
+    grid-area: 6/22/12/25;
+  }
+  & > :nth-child(8) {
+    grid-area: 4/4/9/10;
+  }
+  & > :nth-child(9) {
+    grid-area: 18/9/24/12;
+  }
+  & > :nth-child(10) {
+    grid-area: 18/5/27/9;
+  }
+  & > :nth-child(11) {
+    grid-area: 21/24/26/27;
+  }
+
+  // // goBtn
+  // & > :nth-child(12) {
+  //   grid-area: 15/16/18/18;
+  // }
+  // & > :nth-child(13) {
+  //   grid-area: 12/22/15/25;
+  // }
+  .title {
+    grid-area: 7/25/15/27;
+  }
+  .description {
+    grid-area: 27/18/29/22;
+  }
+}

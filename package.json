@@ -11,6 +11,7 @@
     "postinstall": "yarn lint && yarn tsc"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
     "@reactuses/core": "^4.0.5",
     "@types/node": "20.5.6",
     "@types/react": "18.2.21",
@@ -33,7 +34,6 @@
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "eslint-config-next": "^13.4.19",
-
     "eslint-config-prettier": "^9.0.0",
     "prettier": "^3.0.2",
     "sass": "^1.66.1"

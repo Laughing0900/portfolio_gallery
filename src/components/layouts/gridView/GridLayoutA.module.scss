@@ -1,68 +1,4 @@
-#grid_layout_a {
-  height: 100vh;
-
-
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  scroll-snap-align: start;
-  position: relative;
-
-  // @todo: remove
-  background-color: #5f5f5f;
-}
-
-.previewSlide {
-  width: 300px;
-  height: 200px;
-
-  position: absolute;
-  left: 8px;
-
-    // @todo: remove
-    background-color: #d6d6d6;
-}
-
 .gridContainer {
-  display: grid;
-  width: calc(100% - 2em);
-  height: calc(100% - 2em);
-  grid-auto-rows: calc((calc(100vh - 6em) / 32) - var(--gap));
-  grid-auto-columns: calc((calc(100% - 6em) / 32) - var(--gap));
-  justify-content: center;
-  align-content: center;
-  grid-gap: var(--gap);
-
-  .title {
-    grid-area: 9 /26/ 17/28;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 8px;
-    span {
-      transform-origin: bottom left;
-      transform: rotate(-90deg) translateY(100%);
-      font-size: 40px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-  }
-  .description {
-    grid-area: 22 /24/ 24/28;
-    font-size: 14px;
-  }
-
-  .goBtn {
-    background-color: #ff007a;
-    padding: 8px;
-  }
-
-  & > div {
-    background: #1d1f1f;
-    position: relative;
-  }
   & > :nth-child(1) {
     grid-area: 5 / 12 / 23 / 19;
   }
@@ -96,10 +32,18 @@
   & > :nth-child(11) {
     grid-area: 16 /1/ 23/5;
   }
+  // goBtn
   & > :nth-child(12) {
     grid-area: 5 /19/ 8/22;
   }
   & > :nth-child(13) {
     grid-area: 23/7/26/10;
+  }
+
+  .title {
+    grid-area: 9 /26/ 17/28;
+  }
+  .description {
+    grid-area: 22 /24/ 24/28;
   }
 }

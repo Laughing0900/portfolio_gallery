@@ -1,0 +1,50 @@
+.gridContainer {
+  & > :nth-child(1) {
+    grid-area: 19/11/30/21;
+  }
+  & > :nth-child(2) {
+    grid-area: 2/11/10/19;
+  }
+  & > :nth-child(3) {
+    grid-area: 10/11/19/16;
+  }
+  & > :nth-child(4) {
+    grid-area: 10/16/19/21;
+  }
+  & > :nth-child(5) {
+    grid-area: 10/23/21/30;
+  }
+  & > :nth-child(6) {
+    grid-area: 8/6/17/11;
+  }
+  & > :nth-child(7) {
+    grid-area: 10/2/19/6;
+  }
+  & > :nth-child(8) {
+    grid-area: 17/6/23/11;
+  }
+  & > :nth-child(9) {
+    grid-area: 5/19/10/24;
+  }
+  & > :nth-child(10) {
+    grid-area: 21/21/29/25;
+  }
+  & > :nth-child(11) {
+    grid-area: 21/25/28/28;
+  }
+
+  // goBtn
+  & > :nth-child(12) {
+    grid-area: 21/28/24/31;
+  }
+  & > :nth-child(13) {
+    grid-area: 5/7/8/11;
+  }
+
+  .title {
+    grid-area: 10/21/21/23;
+  }
+  .description {
+    grid-area: 23/7/25/11;
+  }
+}

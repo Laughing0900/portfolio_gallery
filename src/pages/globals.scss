@@ -1,11 +1,12 @@
 :root {
   --foreground-rgb: #f1f1f1;
-  --gap: 8px;
+  --gap: 12px;
 }
 
 body {
   height: 100%;
   color: var(--foreground-rgb);
+  background-color: #1d1f1f;
   margin: 0;
   padding: 0;
   outline: none;
@@ -16,6 +17,68 @@ body {
     height: 100vh;
     position: relative;
     scroll-snap-type: y mandatory;
-    overflow: auto;
+    display: block;
+    overflow-y: scroll;
+  }
+}
+
+.grid_layout {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  scroll-snap-align: center;
+  & > div {
+    background: #000;
+  }
+  .overlay {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
+.gridContainer {
+  display: grid;
+  width: calc(100% - 2em);
+  height: calc(100% - 2em);
+  grid-auto-rows: calc((calc(100vh - 6em) / 32) - var(--gap));
+  grid-auto-columns: calc((calc(100% - 6em) / 32) - var(--gap));
+  justify-content: center;
+  align-content: center;
+  grid-gap: var(--gap);
+
+  .title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 8px;
+    span {
+      transform-origin: bottom left;
+      transform: rotate(-90deg) translateY(100%);
+      font-size: 40px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+  .description {
+    font-size: 14px;
+    padding: 4px;
+  }
+
+  .goBtn {
+    background-color: #ff007a;
+    padding: 8px;
+  }
+
+  & > div {
+    background: #1d1f1f;
+    position: relative;
   }
 }
