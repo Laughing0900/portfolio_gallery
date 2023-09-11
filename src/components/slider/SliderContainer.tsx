@@ -37,19 +37,24 @@ export const SliderContainer: React.FC<SliderContainerProps> = ({}) => {
           return (
             <div className={styles.mainTitle} key={idx}>
               {title}
+              <span className={styles.ctaBtn}>Click to View</span>
             </div>
           );
         })}
         <div className={styles.overlay}></div>
       </motion.div>
 
-      <div className={styles.sliderContainer}>
+      <motion.div
+        className={styles.sliderContainer}
+        style={{
+          scale: isScrolling ? 1.5 : 1,
+          y: isScrolling ? "-50%" : 0,
+        }}
+      >
         <motion.div
           className={styles.scrollable}
           style={{
             x: scrollY,
-            scale: isScrolling ? 1.5 : 1,
-            y: isScrolling ? "-50%" : 0,
           }}
         >
           {CONTENT.map(({ images }, idx) => (
@@ -64,7 +69,7 @@ export const SliderContainer: React.FC<SliderContainerProps> = ({}) => {
             />
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </>
   );
 };
