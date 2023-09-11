@@ -19,8 +19,10 @@ export const GridLayoutD: React.FC<GridLayoutProps> = ({
             className={cn("gridItem", style.gridItem)}
             style={{
               backgroundImage: `url(${image})`,
-              backgroundPosition: "center",
               backgroundSize: "cover",
+              backgroundPosition: `${50 + getY(y, index)}% ${
+                50 + getX(x, index)
+              }%`,
               transform: `translateX(${getX(x, index)}px) translateY(${getY(
                 y,
                 index,

@@ -1,33 +1,68 @@
-import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { useMotionValueEvent, useScroll } from "framer-motion";
+import dynamic from "next/dynamic";
+import { useState } from "react";
 
-import { GridLayoutA } from "@/components/layouts/gridView/GridLayoutA";
 import { CONTENT } from "@/lib/consts/contents";
+
+const GridLayoutA = dynamic(
+  () =>
+    import("@/components/layouts/gridView/GridLayoutA").then(
+      (mod) => mod.GridLayoutA,
+    ),
+  {
+    ssr: false,
+  },
+);
+const GridLayoutB = dynamic(
+  () =>
+    import("@/components/layouts/gridView/GridLayoutB").then(
+      (mod) => mod.GridLayoutB,
+    ),
+  {
+    ssr: false,
+  },
+);
+const GridLayoutC = dynamic(
+  () =>
+    import("@/components/layouts/gridView/GridLayoutC").then(
+      (mod) => mod.GridLayoutC,
+    ),
+  {
+    ssr: false,
+  },
+);
+const GridLayoutD = dynamic(
+  () =>
+    import("@/components/layouts/gridView/GridLayoutD").then(
+      (mod) => mod.GridLayoutD,
+    ),
+  {
+    ssr: false,
+  },
+);
 
 export const GridView: React.FC<GridViewProps> = ({}) => {
   const { scrollYProgress } = useScroll();
-  const view = useTransform(scrollYProgress, [0, 1], [0, CONTENT.length], {});
-  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
-  //   console.log("y changed to", latest);
-  // });
+  const [view, setView] = useState(0);
 
-  useMotionValueEvent(view, "change", (latest) => {
-    // console.log("view changed to", latest.toFixed(0));
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest < 0.25) return setView(0);
+    if (latest < 0.5) return setView(1);
+    if (latest < 0.75) return setView(2);
+    if (latest < 1) return setView(3);
   });
 
-  const activeView = Number(view.get().toFixed(0));
-
-  const content = CONTENT[activeView];
-
-  console.log({ activeView });
-
-  if (activeView === 1) {
+  const content = CONTENT[view];
+  if (view === 0) {
     return <GridLayoutA content={content} />;
   }
-  if (activeView === 2) {
-    return <GridLayoutA content={content} />;
+  if (view === 1) {
+    return <GridLayoutB content={content} />;
   }
-  if (activeView === 3) {
-    return <GridLayoutA content={content} />;
+  if (view === 2) {
+    return <GridLayoutC content={content} />;
   }
-  return <GridLayoutA content={content} />;
+  if (view === 3) {
+    return <GridLayoutD content={content} />;
+  }
 };
