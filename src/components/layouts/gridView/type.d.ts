@@ -6,3 +6,9 @@ type GridLayoutProps = {
     description: string;
   };
 };
+
+type GridViewProps = {
+  activeView?: number;
+};
+
+// todo rm activeView,isScrolling
