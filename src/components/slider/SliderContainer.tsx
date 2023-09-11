@@ -44,7 +44,14 @@ export const SliderContainer: React.FC<SliderContainerProps> = ({}) => {
       </motion.div>
 
       <div className={styles.sliderContainer}>
-        <motion.div className={styles.scrollable} style={{ x: scrollY }}>
+        <motion.div
+          className={styles.scrollable}
+          style={{
+            x: scrollY,
+            scale: isScrolling ? 1.5 : 1,
+            y: isScrolling ? "-50%" : 0,
+          }}
+        >
           {CONTENT.map(({ images }, idx) => (
             <div
               key={idx}
