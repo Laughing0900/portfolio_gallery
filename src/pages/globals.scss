@@ -10,16 +10,9 @@ body {
   margin: 0;
   padding: 0;
   outline: none;
+  position: relative;
 
   scroll-behavior: smooth;
-}
-
-main {
-  position: relative;
-  // height: fit-content;
-  // scroll-snap-type: y mandatory;
-  // display: block;
-  // overflow-y: scroll;
 }
 
 .grid_layout {
@@ -30,9 +23,7 @@ main {
   align-items: center;
   position: relative;
   scroll-snap-align: center;
-  & > div {
-    // background: #000;
-  }
+
   .overlay {
     position: absolute;
     inset: 0;

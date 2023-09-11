@@ -1,10 +1,3 @@
-import {
-  m as motion,
-  useMotionValue,
-  useMotionValueEvent,
-  useTransform,
-} from "framer-motion";
-
 import { getX, getY } from "@/components/layouts/gridView/getMouseEffect";
 import { cn } from "@/lib/cn";
 import { useMouseMove } from "@/lib/hooks/useMouseMove";
@@ -14,7 +7,6 @@ import style from "./GridLayoutA.module.scss";
 export const GridLayoutA: React.FC<GridLayoutProps> = ({ content }) => {
   const { images, title, description } = content;
   const { x, y } = useMouseMove();
-
   return (
     <div className={"grid_layout"}>
       <div className={cn("gridContainer", style.gridContainer)}>
