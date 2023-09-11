@@ -2,6 +2,7 @@ export const CONTENT = [
   {
     title: "This is Cats",
     description: "You have caught their attention!",
+    layout: "a",
     images: [
       "/images/cat/cat0.avif",
       "/images/cat/cat1.avif",
@@ -19,6 +20,7 @@ export const CONTENT = [
   {
     title: "This is Cats",
     description: "You have caught their attention!",
+    layout: "b",
     images: [
       "/images/cat/cat0.avif",
       "/images/cat/cat1.avif",
@@ -36,6 +38,7 @@ export const CONTENT = [
   {
     title: "This is Cats",
     description: "You have caught their attention!",
+    layout: "c",
     images: [
       "/images/cat/cat0.avif",
       "/images/cat/cat1.avif",
@@ -53,6 +56,7 @@ export const CONTENT = [
   {
     title: "This is Cats",
     description: "You have caught their attention!",
+    layout: "d",
     images: [
       "/images/cat/cat0.avif",
       "/images/cat/cat1.avif",

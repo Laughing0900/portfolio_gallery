@@ -1,17 +1,25 @@
-import { motion } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 import { CONTENT } from "@/lib/consts/contents";
 
 import styles from "./SliderContainer.module.scss";
 
 type SliderContainerProps = {
-  y: number;
+  y?: number;
 };
+const distance = 258 * 3;
+export const SliderContainer: React.FC<SliderContainerProps> = ({}) => {
+  const { scrollYProgress } = useScroll();
+  const scrollY = useTransform(scrollYProgress, [0, 1], [0, -distance]);
 
-export const SliderContainer: React.FC<SliderContainerProps> = ({ y }) => {
   return (
     <div className={styles.sliderContainer}>
-      <motion.div className={styles.scrollable} style={{ x: -y }}>
+      <motion.div className={styles.scrollable} style={{ x: scrollY }}>
         {CONTENT.map(({ images }, idx) => (
           <div
             key={idx}

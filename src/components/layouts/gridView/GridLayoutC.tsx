@@ -1,4 +1,3 @@
-import { GridLayoutProps } from "@/components/layouts/gridView/type";
 import { cn } from "@/lib/cn";
 
 import style from "./GridLayoutC.module.scss";
